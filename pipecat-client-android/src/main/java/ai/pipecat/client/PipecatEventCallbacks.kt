@@ -7,6 +7,8 @@ import ai.pipecat.client.types.LLMFunctionCallData
 import ai.pipecat.client.types.MediaDeviceInfo
 import ai.pipecat.client.types.Participant
 import ai.pipecat.client.types.PipecatMetrics
+import ai.pipecat.client.types.RTVINetworkConnectionStatusUpdate
+import ai.pipecat.client.types.RTVINetworkStats
 import ai.pipecat.client.types.Tracks
 import ai.pipecat.client.types.Transcript
 import ai.pipecat.client.types.TransportState
@@ -175,4 +177,8 @@ abstract class PipecatEventCallbacks {
      * registerFunctionCallHandler().
      */
     open fun onLLMFunctionCall(functionCallData: LLMFunctionCallData) {}
+
+    open fun onNetworkStatsUpdated(networkStats: RTVINetworkStats) {}
+
+    open fun onNetworkConnectionStatusUpdated(networkConnectionStatusUpdate: RTVINetworkConnectionStatusUpdate) {}
 }

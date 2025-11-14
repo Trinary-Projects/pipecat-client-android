@@ -1,8 +1,8 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.jetbrains.kotlin.serialization)
-    alias(libs.plugins.jetbrains.dokka)
+    id("com.android.library") version "8.7.3"
+    id("org.jetbrains.kotlin.android") version "2.1.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.0"
+    id("org.jetbrains.dokka") version "1.9.20"
     `maven-publish`
     signing
 }
@@ -40,12 +40,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.okhttp)
-    implementation(libs.kotlinx.serialization.json)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
 }
 
 publishing {
